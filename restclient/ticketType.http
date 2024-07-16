@@ -1,0 +1,25 @@
+### get All ticketTypes
+GET http://localhost:3000/ticketTypes
+Content-Type: application/json
+Authorization: Bearer 
+
+
+
+### get a specific ticketType
+GET http://localhost:3000/ticketType/
+Content-Type: application/json
+Authorization: Bearer 
+
+
+
+### update a specific ticketType
+PUT http://localhost:3000/ticketType/
+Content-Type: application/json
+Authorization: Bearer 
+
+
+
+### delete a specific ticketType
+DELETE http://localhost:3000/ticketType/
+Content-Type: application/json
+Authorization: Bearer 

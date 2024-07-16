@@ -1,0 +1,48 @@
+### create an event
+POST http://localhost:3000/events
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "title": "Anime Cosplay Festival 2024",
+  "description": "Join us for a weekend of anime and manga!",
+  "date": "2024-09-20T00:00:00Z",
+  "time": "2024-09-20T09:00:00Z",
+  "location": "Central Park, Konoha",
+  "image": "https://i.pinimg.com/474x/6e/a1/2d/6ea12d1ac7e8a63f978e27209e285c30.jpg",
+  "price": 75.00,
+  "managerId": 1,
+  "ticketTypes": [
+    {
+      "type": "Normal",
+      "price": 75.00,
+      "availability": 50
+    },
+    {
+      "type": "VIP",
+      "price": 150.00,
+      "availability": 10
+    }
+  ]
+}
+
+
+
+### update an event
+PUT  http://localhost:3000/events/
+Content-Type: application/json
+Authorization: Bearer 
+
+
+### delete an event
+DELETE  http://localhost:3000/events/
+Content-Type: application/json
+Authorization: Bearer
+
+
+### get All events
+GET http://localhost:3000/events
+
+
+### get specific events
+GET http://localhost:3000/events/
