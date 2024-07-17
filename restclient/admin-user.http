@@ -1,0 +1,20 @@
+### get All Users
+GET http://localhost:3000/admin/users
+Content-Type: application/json
+Authorization: Bearer 
+
+
+
+
+### get single User
+GET http://localhost:3000/admin/users/15
+Content-Type: application/json
+Authorization: Bearer 
+
+
+
+
+### delete User
+DELETE  http://localhost:3000/admin/users/15
+Content-Type: application/json
+Authorization: Bearer 

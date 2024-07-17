@@ -19,6 +19,20 @@ Authorization: Bearer
 
 
 
+### create a new ticketType
+POST http://localhost:3000/ticketType
+Content-Type: application/json
+Authorization: Bearer 
+
+[{
+  "type": "VIP",
+  "price": 50,
+  "availability": 90,
+  "eventId": 1
+}]
+
+
+
 ### delete a specific ticketType
 DELETE http://localhost:3000/ticketType/
 Content-Type: application/json

@@ -3,9 +3,9 @@ POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    "email": "testuser3@example.com",
-    "password": "Password333",
-    "name": "Test User3"
+    "email": "whitneynavalia@gmail.com",
+    "password": "Passwordwww",
+    "name": "whit"
     
 }
 
@@ -56,8 +56,8 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "email": "manager1@example.com",
-    "password": "managerPassword123"
+    "email": "marvo@gmail.com",
+    "password": "marvo@MIX"
 }
 
 ### Reset Password

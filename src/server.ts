@@ -8,6 +8,8 @@ import bookingRoutes from "./routes/booking.routes";
 import ticketTypeRoutes from "./routes/ticketType.routes";
 import notificationRoutes from "./routes/notification.routes";
 import analyticsRoutes from "./routes/analytics.routes";
+import adminUserRoutes from "./routes/admin-user.routes";
+
 
 dotenv.config();
 
@@ -35,6 +37,9 @@ app.use(express.json());
  */
 // Add the user routes
 app.use('/users', userRoutes);
+
+// Add the admin-user routes
+app.use('/admin', adminUserRoutes);
 
 // Add the profile routes
 app.use('/profiles', profileRoutes);
