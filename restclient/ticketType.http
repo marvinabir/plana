@@ -6,34 +6,41 @@ Authorization: Bearer
 
 
 ### get a specific ticketType
-GET http://localhost:3000/ticketType/
+GET http://localhost:3000/ticketTypes/7
 Content-Type: application/json
 Authorization: Bearer 
 
 
 
 ### update a specific ticketType
-PUT http://localhost:3000/ticketType/
+PUT http://localhost:3000/ticketTypes/7
 Content-Type: application/json
 Authorization: Bearer 
+
+{
+  "type": "VVIP",
+  "price": 50,
+  "availability": 190,
+  "eventId": 1
+}
 
 
 
 ### create a new ticketType
-POST http://localhost:3000/ticketType
+POST http://localhost:3000/ticketTypes
 Content-Type: application/json
 Authorization: Bearer 
 
-[{
-  "type": "VIP",
+{
+  "type": "special",
   "price": 50,
   "availability": 90,
   "eventId": 1
-}]
+}
 
 
 
 ### delete a specific ticketType
-DELETE http://localhost:3000/ticketType/
+DELETE http://localhost:3000/ticketTypes/7
 Content-Type: application/json
 Authorization: Bearer 

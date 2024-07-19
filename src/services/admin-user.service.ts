@@ -25,10 +25,23 @@ const getSingleUserService = async (userId: number): Promise<User | null> => {
  * @param userId 
  * @returns 
  */
+
 const deleteUserService = async (userId: number): Promise<void> => {
-  await prisma.user.delete({
-    where: { id: userId },
-  });
+  try {
+    await prisma.user.delete({
+      where: { id: userId },
+    });
+    console.log(`User with ID ${userId} deleted successfully.`);
+  } catch (error) {
+    console.error(`Failed to delete user with ID ${userId}:`, error);
+    throw new Error(`Unable to delete user with ID ${userId}`);
+  }
 };
+
+// const deleteUserService = async (userId: number): Promise<void> => {
+//   await prisma.user.delete({
+//     where: { id: userId },
+//   });
+// };
 
 export { getAllUsersService, getSingleUserService, deleteUserService };

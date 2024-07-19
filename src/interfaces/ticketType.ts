@@ -5,7 +5,7 @@ export interface TicketType {
     type: string;
     price: number;
     availability: number;
-    eventId: number;
+    eventId: Event;
     createdAt: Date;
     updatedAt: Date;
   }

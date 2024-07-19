@@ -2,9 +2,10 @@
 POST http://localhost:3000/users/register
 Content-Type: application/json
 
+
 {
-    "email": "whitneynavalia@gmail.com",
-    "password": "Passwordwww",
+    "email": "whitneyjacks685@gmail.com",
+    "password": "Password123",
     "name": "whit"
     
 }
@@ -15,32 +16,37 @@ POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    "email": "marvo2@gmail.com",
+    "email": "marvo3@gmail.com",
     "password": "marvo@MIX",
     "name": "Admin1",
     "role": "SUPER_ADMIN"
 }
+
 
 ### Register a new manager user
 POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    "email": "marvo@gmail.com",
-    "password": "marvo@MIX",
-    "name": "Manager1",
+    "email": "marvgffoke@gmail.com",
+    "password": "marvokhhu7e@MIX",
+    "name": "Manager990",
     "role": "EVENT_MANAGER"
 }
+
+
 
 ### Login
 POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-   
-    "email": "testuser899@example.com",
-    "password": "Password899999999999"
+    "email": "proheromarvin@gmail.com",
+    "password": "Password123"
+    
 }
+
+
 
 ### Login as admin
 POST http://localhost:3000/users/login
@@ -51,6 +57,8 @@ Content-Type: application/json
     "password": "marvo@MIX"
 }
 
+
+
 ### Login as manager
 POST http://localhost:3000/users/login
 Content-Type: application/json
@@ -60,20 +68,27 @@ Content-Type: application/json
     "password": "marvo@MIX"
 }
 
+
+
 ### Reset Password
 POST http://localhost:3000/users/reset
 Content-Type: application/json
 
 {
     "email": "testuser@example.com",
-    "newPassword": "NewPassword123"
+    "Password": "NewPassword123"
 }
 
+
+
 ### Reset Password
-POST http://localhost:3000/users
+POST http://localhost:3000/users/reset
 Content-Type: application/json
 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTMzODIwOCwiZXhwIjoxNzIxMzQxODA4fQ.ymYoSnihB2sl2h9irE_nD70GcfWsUA68pVMjOt5gPaw
+
 {
-    "email": "testuser@example.com",
-    "newPassword": "NewPassword123"
+   "email": "marvo2@gmail.com",
+    "password": "marvo@MINT"
 }

@@ -40,6 +40,7 @@ const getSingleUser = async (req: Request, res: Response): Promise<void> => {
  * @param req 
  * @param res 
  */
+
 const deleteUser = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
 
@@ -50,5 +51,15 @@ const deleteUser = async (req: Request, res: Response): Promise<void> => {
     res.status(400).json({ error: error.message });
   }
 };
+// const deleteUser = async (req: Request, res: Response): Promise<void> => {
+//   const { id } = req.params;
+
+//   try {
+//     await deleteUserService(parseInt(id));
+//     res.status(200).json({ message: "User deleted successfully" });
+//   } catch (error: any) {
+//     res.status(400).json({ error: error.message });
+//   }
+// };
 
 export { getAllUsers, getSingleUser, deleteUser };

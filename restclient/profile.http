@@ -1,0 +1,15 @@
+### get a user
+GET  http://localhost:3000/profiles/58
+
+
+
+
+### update a user
+PUT http://localhost:3000/profiles/1
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "name": "Test User11",
+  "email": "testuser11@example.com"
+}

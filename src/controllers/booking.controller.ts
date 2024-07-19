@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import { getAllBookings, getBookingById, createBooking, updateBooking, deleteBooking } from '../services/booking.service';
-
+import { sendRegistrationEmail } from '../config/mailer'
+import { registerUser, loginUser, resetPassword } from '../services/user.service';
+import { User } from '../interfaces/user';
 /**
  * Controller to handle getting all bookings
  * @param req 

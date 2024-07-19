@@ -1,20 +1,31 @@
 ### get All Users
 GET http://localhost:3000/admin/users
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJtYXJ2bzJAZ21haWwuY29tIiwicm9sZSI6IlNVUEVSX0FETUlOIiwiaWF0IjoxNzIxMzY5NzAzLCJleHAiOjE3MjEzNzMzMDN9.4YLphJFY4PQ-zH-1cRMcvhMmcR-2s8OVtPuUb0XfTSg
 
 
 
 
 ### get single User
-GET http://localhost:3000/admin/users/15
+GET http://localhost:3000/admin/users/1
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJtYXJ2bzJAZ21haWwuY29tIiwicm9sZSI6IlNVUEVSX0FETUlOIiwiaWF0IjoxNzIxMzY5NzAzLCJleHAiOjE3MjEzNzMzMDN9.4YLphJFY4PQ-zH-1cRMcvhMmcR-2s8OVtPuUb0XfTSg
 
+
+
+
+### Login as admin
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "marvo2@gmail.com",
+    "password": "marvo@MIX"
+}
 
 
 
 ### delete User
-DELETE  http://localhost:3000/admin/users/15
+DELETE  http://localhost:3000/admin/users/1
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJtYXJ2bzJAZ21haWwuY29tIiwicm9sZSI6IlNVUEVSX0FETUlOIiwiaWF0IjoxNzIxMzM5MTExLCJleHAiOjE3MjEzNDI3MTF9.auMYRYplVU-A0k-sNtCbg2IKM1RMCBHbMfEYjY12nvU

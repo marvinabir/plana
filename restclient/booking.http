@@ -4,17 +4,11 @@ Content-Type: application/json
 Authorization: Bearer 
 
 {
-  "userId": 1,
+  "userId": 58,
   "eventId": 1,
   "ticketTypeId": 1,
   "status": "CONFIRMED"
 }
-
-
-### update a booking
-POST http://localhost:3000/bookings/
-Content-Type: application/json
-Authorization: Bearer 
 
 
 ### get All Bookings
@@ -24,12 +18,22 @@ Authorization: Bearer
 
 
 ### get a specific booking
-GET http://localhost:3000/bookings/
+GET http://localhost:3000/bookings/1
 Content-Type: application/json
 Authorization: Bearer 
 
 
 ### delete a specific booking
-DELETE http://localhost:3000/bookings
+DELETE http://localhost:3000/bookings/1
+Content-Type: application/json
+Authorization: Bearer 
+
+
+
+
+
+
+### update a booking
+PUT http://localhost:3000/bookings/11
 Content-Type: application/json
 Authorization: Bearer 

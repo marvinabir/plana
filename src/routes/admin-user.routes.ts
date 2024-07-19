@@ -1,10 +1,13 @@
 import { Router } from 'express';
 import { getAllUsers, getSingleUser, deleteUser } from '../controllers/admin-user.controller';
+import roleMiddleware from '../middlewares/role.middleware';
+import authMiddleware from '../middlewares/auth.middleware';
+import { Role } from '../interfaces/role.enum';
 
 const router = Router();
 
-router.get('/users', getAllUsers);
-router.get('/users/:id', getSingleUser);
-router.delete('/users/:id', deleteUser);
+router.get('/users', authMiddleware, roleMiddleware(Role.SUPER_ADMIN),  getAllUsers);
+router.get('/users/:id',  authMiddleware, roleMiddleware(Role.SUPER_ADMIN), getSingleUser);
+router.delete('/users/:id',  authMiddleware, roleMiddleware(Role.SUPER_ADMIN), deleteUser);
 
 export default router;
