@@ -4,9 +4,9 @@ Content-Type: application/json
 
 
 {
-    "email": "whitneyjacks685@gmail.com",
+    "email": "gamesmy177@gmail.com",
     "password": "Password123",
-    "name": "whit"
+    "name": "DANIGGA"
     
 }
 
@@ -16,9 +16,9 @@ POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    "email": "marvo3@gmail.com",
-    "password": "marvo@MIX",
-    "name": "Admin1",
+    "email": "marvotheone@gmail.com",
+    "password": "theonlyone",
+    "name": "Marvothe1",
     "role": "SUPER_ADMIN"
 }
 
@@ -28,9 +28,9 @@ POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    "email": "marvgffoke@gmail.com",
-    "password": "marvokhhu7e@MIX",
-    "name": "Manager990",
+    "email": "marvothegoat@gmail.com",
+    "password": "ilovemarvo",
+    "name": "Marvothegoat",
     "role": "EVENT_MANAGER"
 }
 
@@ -40,15 +40,16 @@ Content-Type: application/json
 POST http://localhost:3000/users/login
 Content-Type: application/json
 
+
 {
-    "email": "proheromarvin@gmail.com",
+    "email": "gamesmy177@gmail.com",
     "password": "Password123"
     
 }
 
 
 
-### Login as admin
+### Login as super-admin
 POST http://localhost:3000/users/login
 Content-Type: application/json
 
@@ -70,25 +71,17 @@ Content-Type: application/json
 
 
 
-### Reset Password
-POST http://localhost:3000/users/reset
-Content-Type: application/json
-
-{
-    "email": "testuser@example.com",
-    "Password": "NewPassword123"
-}
-
 
 
 ### Reset Password
 POST http://localhost:3000/users/reset
 Content-Type: application/json
-
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTMzODIwOCwiZXhwIjoxNzIxMzQxODA4fQ.ymYoSnihB2sl2h9irE_nD70GcfWsUA68pVMjOt5gPaw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE2LCJlbWFpbCI6IndoaXRuZXlAZ21haWwuY29tIiwicm9sZSI6IkFUVEVOREVFIiwiaWF0IjoxNzIxMzg2NTk3LCJleHAiOjE3MjEzOTAxOTd9.yUimU9kReplQZjYyYEQGJhM5aAKiQEChhDJ9plM97Yc
 
 {
-   "email": "marvo2@gmail.com",
-    "password": "marvo@MINT"
+    "email": "whitney@gmail.com",
+    "newPassword": "Password823"
 }
+
+
+

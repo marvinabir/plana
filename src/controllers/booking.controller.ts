@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getAllBookings, getBookingById, createBooking, updateBooking, deleteBooking } from '../services/booking.service';
+import { getAllBookings, getBookingById, createBooking, updateBooking, deleteBooking, getBookingsByUserId, createGroupBooking, getGroupBookings } from '../services/booking.service';
 import { sendRegistrationEmail } from '../config/mailer'
 import { registerUser, loginUser, resetPassword } from '../services/user.service';
 import { User } from '../interfaces/user';
@@ -77,3 +77,60 @@ const remove = async (req: Request, res: Response) => {
 };
 
 export { getAll, getById, create, update, remove };
+
+
+/**
+ * Controller to handle getting all bookings by user ID
+ * @param req 
+ * @param res 
+ */
+const getByUserId = async (req: Request, res: Response) => {
+  const { userId } = req.params;
+  try {
+    const bookings = await getBookingsByUserId(parseInt(userId, 10));
+    res.status(200).json(bookings);
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+export { getByUserId };
+
+/**
+ * Controller to handle creating group bookings for multiple users
+ * @param req 
+ * @param res 
+ */
+const createGroup = async (req: Request, res: Response) => {
+  try {
+    const success = await createGroupBooking(req.body);
+    if (success) {
+      res.status(201).json({ message: 'Group bookings created successfully' });
+    } else {
+      res.status(400).json({ error: 'Failed to create all group bookings' });
+    }
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+export { createGroup };
+
+
+/**
+ * Controller to handle getting group bookings by user ID and event ID
+ * @param req 
+ * @param res 
+ */
+const getGroup = async (req: Request, res: Response) => {
+  const { userId, eventId } = req.params;
+  try {
+    const bookings = await getGroupBookings(parseInt(userId, 10), parseInt(eventId, 10));
+    res.status(200).json(bookings);
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+export {  getGroup };
+

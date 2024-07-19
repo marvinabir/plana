@@ -6,22 +6,33 @@ Authorization: Bearer
 
 
 ### get a specific ticketType
-GET http://localhost:3000/ticketTypes/7
+GET http://localhost:3000/ticketTypes/
 Content-Type: application/json
 Authorization: Bearer 
 
 
 
 ### update a specific ticketType
-PUT http://localhost:3000/ticketTypes/7
+PUT http://localhost:3000/ticketTypes/32
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTM5NjM4MCwiZXhwIjoxNzIxMzk5OTgwfQ.AOhlREf8tZBCoOiSVcfmf80YjEw3tBnmixUJwgyFnDM
 
 {
-  "type": "VVIP",
+  "type": "Single",
   "price": 50,
   "availability": 190,
-  "eventId": 1
+  "eventId": 13
+}
+
+
+
+### Login as manager
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "marvo@gmail.com",
+    "password": "marvo@MIX"
 }
 
 
@@ -32,15 +43,15 @@ Content-Type: application/json
 Authorization: Bearer 
 
 {
-  "type": "special",
+  "type": "Group",
   "price": 50,
   "availability": 90,
-  "eventId": 1
+  "eventId": 2
 }
 
 
 
 ### delete a specific ticketType
-DELETE http://localhost:3000/ticketTypes/7
+DELETE http://localhost:3000/ticketTypes/29
 Content-Type: application/json
 Authorization: Bearer 

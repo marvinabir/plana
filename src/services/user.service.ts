@@ -53,6 +53,24 @@ const loginUser = async (email: string, password: string) => {
 };
 
 
+// /**
+//  * Function to reset a user's password
+//  * @param email 
+//  * @param newPassword 
+//  * @returns 
+//  */
+// const resetPassword = async (email: string, newPassword: string) => {
+//   const hashedPassword = await bcrypt.hash(newPassword, 10);
+//   const updatedUser = await prisma.user.update({
+//     where: { email },
+//     data: { password: hashedPassword }
+//   });
+//   return !!updatedUser;
+// };
+
+
+
+
 /**
  * Function to reset a user's password
  * @param email 
@@ -67,5 +85,9 @@ const resetPassword = async (email: string, newPassword: string) => {
   });
   return !!updatedUser;
 };
+
+
+
+
 
 export { registerUser, loginUser, resetPassword };

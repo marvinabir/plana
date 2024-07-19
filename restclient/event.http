@@ -1,11 +1,42 @@
 ### create an event
 POST http://localhost:3000/events
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTM5NjM4MCwiZXhwIjoxNzIxMzk5OTgwfQ.AOhlREf8tZBCoOiSVcfmf80YjEw3tBnmixUJwgyFnDM
+
+
+{
+  "title": "Anime  Festival 2024",
+  "description": "Join us for a weekend of anime and manga!",
+  "date": "2024-09-20T00:00:00Z",
+  "time": "2024-09-20T09:00:00Z",
+  "location": "Central Park, Wano",
+  "image": "https://i.pinimg.com/474x/fb/49/64/fb49643e7e84f697c2a5494518bcc07f.jpg",
+  "price": 75.00,
+  "managerId": 2,
+  "ticketTypes": [
+    {
+      "type": "Single",
+      "price": 75.00,
+      "availability": 80
+    },
+    {
+      "type": "Group",
+      "price": 150.00,
+      "availability": 70
+    }
+  ]
+}
+
+
+
+### update an event
+PUT  http://localhost:3000/events/11
+Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTM2OTM4MCwiZXhwIjoxNzIxMzcyOTgwfQ.W3OnqrWpLzkWDJr8J98qWmIUICF0G5GCbZGCw0V3bO0
 
 
 {
-  "title": "Anime Music Festival 2024",
+  "title": " Anime Music Festival 2024",
   "description": "Join us for a weekend of anime and manga!",
   "date": "2024-09-20T00:00:00Z",
   "time": "2024-09-20T09:00:00Z",
@@ -29,33 +60,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiO
 
 
 
-### update an event
-PUT  http://localhost:3000/events/11
+### Login as manager
+POST http://localhost:3000/users/login
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTM2OTM4MCwiZXhwIjoxNzIxMzcyOTgwfQ.W3OnqrWpLzkWDJr8J98qWmIUICF0G5GCbZGCw0V3bO0
-
 
 {
-  "title": " Music Festival 2024",
-  "description": "Join us for a weekend of anime and manga!",
-  "date": "2024-09-20T00:00:00Z",
-  "time": "2024-09-20T09:00:00Z",
-  "location": "Central Park, Wano",
-  "image": "https://i.pinimg.com/474x/fb/49/64/fb49643e7e84f697c2a5494518bcc07f.jpg",
-  "price": 75.00,
-  "managerId": 2,
-  "ticketTypes": [
-    {
-      "type": "Single",
-      "price": 75.00,
-      "availability": 50
-    },
-    {
-      "type": "Group",
-      "price": 150.00,
-      "availability": 10
-    }
-  ]
+    "email": "marvo@gmail.com",
+    "password": "marvo@MIX"
 }
 
 
@@ -73,4 +84,4 @@ Authorization: Bearer
 
 
 ### get specific events
-GET http://localhost:3000/events/11
+GET http://localhost:3000/events/13

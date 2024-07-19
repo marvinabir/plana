@@ -1,7 +1,7 @@
 ### get All Users
 GET http://localhost:3000/admin/users
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJtYXJ2bzJAZ21haWwuY29tIiwicm9sZSI6IlNVUEVSX0FETUlOIiwiaWF0IjoxNzIxMzY5NzAzLCJleHAiOjE3MjEzNzMzMDN9.4YLphJFY4PQ-zH-1cRMcvhMmcR-2s8OVtPuUb0XfTSg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJtYXJ2bzJAZ21haWwuY29tIiwicm9sZSI6IlNVUEVSX0FETUlOIiwiaWF0IjoxNzIxMzgwMTMyLCJleHAiOjE3MjEzODM3MzJ9.gR8iQy9SFz2UfxmObS9RgUr2_SMmlmRkj0X1sPcUXz0
 
 
 
