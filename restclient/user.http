@@ -4,9 +4,9 @@ Content-Type: application/json
 
 
 {
-    "email": "gamesmy177@gmail.com",
-    "password": "Password123",
-    "name": "DANIGGA"
+    "email": "marco@gmail.com",
+    "password": "phoenix",
+    "name": "Pineapple"
     
 }
 
@@ -85,3 +85,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE2LCJlbWFpb
 
 
 
+### Login as super-admin
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "whitney@gmail.com",
+    "password": "password"
+}

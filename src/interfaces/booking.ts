@@ -1,10 +1,10 @@
 export interface Booking {
-    id: number;
+    id?: number;
     userId: number;
     eventId: number;
     ticketTypeId: number;
     status: 'CONFIRMED' | 'CANCELLED';
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
   }
   

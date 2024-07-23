@@ -1,5 +1,5 @@
 import prisma from "../config/database";
-import { Analytics } from '../interfaces/analytics';
+import { Analytics } from '../controllers/analytics';
 
 /**
  * Function to get all analytics

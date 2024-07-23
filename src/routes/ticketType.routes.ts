@@ -1,15 +1,17 @@
 import { Router } from 'express';
-import { getAll, getById, create, update, remove } from '../controllers/ticketType.controller';
+import { getAll, getById, create, update, remove, getByEventId } from '../controllers/ticketType.controller';
 import roleMiddleware from '../middlewares/role.middleware';
 import authMiddleware from '../middlewares/auth.middleware';
 import { Role } from '../interfaces/role.enum';
 
 const router = Router();
 
-router.get('/',authMiddleware, roleMiddleware(Role.EVENT_MANAGER), getAll);
-router.get('/:id',authMiddleware, roleMiddleware(Role.EVENT_MANAGER), getById);
-router.post('/',authMiddleware, roleMiddleware(Role.EVENT_MANAGER), create);
-router.put('/:id',authMiddleware, roleMiddleware(Role.EVENT_MANAGER), update);
-router.delete('/:id',authMiddleware, roleMiddleware(Role.EVENT_MANAGER), remove);
-
+router.get('/', getAll);
+router.get('/:id', getById);
+router.post('/', create);
+router.put('/:id', update);
+router.delete('/:id', remove);
+router.get('/event/:eventId', getByEventId);
 export default router;
+
+// authMiddleware, roleMiddleware(Role.EVENT_MANAGER),

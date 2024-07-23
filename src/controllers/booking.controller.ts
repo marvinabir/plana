@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getAllBookings, getBookingById, createBooking, updateBooking, deleteBooking, getBookingsByUserId, createGroupBooking, getGroupBookings } from '../services/booking.service';
+import { getAllBookings, getBookingById, createBooking, updateBooking, deleteBooking, getBookingsByUserId, createGroupBooking, getGroupBookings, updateBookingStatus, updateUserBookingStatus,updateAllUserBookingStatus } from '../services/booking.service';
 import { sendRegistrationEmail } from '../config/mailer'
 import { registerUser, loginUser, resetPassword } from '../services/user.service';
 import { User } from '../interfaces/user';
@@ -40,6 +40,7 @@ const getById = async (req: Request, res: Response) => {
 const create = async (req: Request, res: Response) => {
   try {
     const booking = await createBooking(req.body);
+    
     res.status(201).json(booking);
   } catch (error:any) {
     res.status(400).json({ error: error.message });
@@ -95,6 +96,72 @@ const getByUserId = async (req: Request, res: Response) => {
 };
 
 export { getByUserId };
+
+
+
+/**
+ * Controller to handle updating booking status
+ * @param req 
+ * @param res 
+ */
+const changeBookingStatus = async (req: Request, res: Response) => {
+  const { bookingId } = req.params;
+  const { status } = req.body;
+  try {
+    const updatedBooking = await updateBookingStatus(parseInt(bookingId, 10), status);
+    res.status(200).json(updatedBooking);
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+export { changeBookingStatus };
+
+
+
+
+/**
+ * Controller to handle updating booking status for a specific user's specific booking
+ * @param req 
+ * @param res 
+ */
+const changeUserBookingStatus = async (req: Request, res: Response) => {
+  const { userId, bookingId } = req.params;
+  const { status } = req.body;
+  try {
+    const updatedBooking = await updateUserBookingStatus(parseInt(userId, 10), parseInt(bookingId, 10), status);
+    res.status(200).json(updatedBooking);
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+export { changeUserBookingStatus };
+
+
+
+/**
+ * Controller to handle updating booking status for a specific user
+ * @param req 
+ * @param res 
+ */
+const changeAllUserBookingStatus = async (req: Request, res: Response) => {
+  const { userId } = req.params;
+  const { status } = req.body;
+  try {
+    await updateAllUserBookingStatus(parseInt(userId, 10), status);
+    res.status(200).json({ message: 'Booking status updated successfully' });
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+export {changeAllUserBookingStatus };
+
+
+
+
+
 
 /**
  * Controller to handle creating group bookings for multiple users

@@ -1,7 +1,7 @@
 ### create a booking
 POST http://localhost:3000/bookings
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE3LCJlbWFpbCI6ImdhbWVzbXkxNzdAZ21haWwuY29tIiwicm9sZSI6IkFUVEVOREVFIiwiaWF0IjoxNzIxMzk2NjA2LCJleHAiOjE3MjE0MDAyMDZ9.NujBlfEN7UG24DlzyskIL_80dRc7wCBAGgGSrXjrB50
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE3LCJlbWFpbCI6ImdhbWVzbXkxNzdAZ21haWwuY29tIiwicm9sZSI6IkFUVEVOREVFIiwiaWF0IjoxNzIxNzE5NTc1LCJleHAiOjE3MjE3MjMxNzV9.BHxO111bBwWGXnhb-qoi2uIFos7oj3CfJclajTh_3wc
 
 {
   "userId": 117,
@@ -16,7 +16,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE3LCJlbWFpb
 ### get All Bookings
 GET http://localhost:3000/bookings
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTcxOTUzMSwiZXhwIjoxNzIxNzIzMTMxfQ.CD2aIUgxXtYseiQX5UrIech_jUCBGGQy4GkC21RMN08
 
 
 
@@ -27,10 +27,53 @@ Authorization: Bearer
 
 
 
-### get a specific booking
-GET http://localhost:3000/bookings/1
+
+### get all bookings for a specific user
+GET http://localhost:3000/bookings/user/
 Content-Type: application/json
 Authorization: Bearer 
+
+
+
+### update booking status
+PUT http://localhost:3000/bookings/status/7
+Content-Type: application/json
+Authorization: Bearer 
+
+
+{
+  "status": "CONFIRMED" 
+}
+
+
+
+### get a specific booking
+GET http://localhost:3000/bookings/7
+Content-Type: application/json
+Authorization: Bearer 
+
+
+
+### update status for a specific booking for a specific user
+PUT http://localhost:3000/bookings/user/1/booking/9/status
+Content-Type: application/json
+Authorization: Bearer 
+
+
+{
+  "status": "CANCELLED" 
+}
+
+
+
+### update All booking status for a specific user
+PUT http://localhost:3000/bookings/user/:userId/status
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "status": "CONFIRMED" 
+}
 
 
 

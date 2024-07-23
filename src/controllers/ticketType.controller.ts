@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getAllTicketTypes, getTicketTypeById, createTicketType, updateTicketType, deleteTicketType } from '../services/ticketType.service';
+import { getAllTicketTypes, getTicketTypeById, createTicketType, updateTicketType, deleteTicketType, getTicketTypesByEventId } from '../services/ticketType.service';
 
 /**
  * Controller to handle getting all ticket types
@@ -75,3 +75,22 @@ const remove = async (req: Request, res: Response) => {
 };
 
 export { getAll, getById, create, update, remove };
+
+
+/**
+ * Controller to handle getting ticket types by event ID
+ * @param req 
+ * @param res 
+ */
+const getByEventId = async (req: Request, res: Response) => {
+  const { eventId } = req.params;
+  try {
+    const ticketTypes = await getTicketTypesByEventId(parseInt(eventId, 10));
+    res.status(200).json(ticketTypes);
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+};
+// **Added code ends here**
+
+export { getByEventId };

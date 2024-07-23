@@ -40,7 +40,7 @@ const createBooking = async (bookingData: Booking): Promise<Booking> => {
       data: {
         userId,
         eventId,
-        ticketTypeId,
+        ticketTypeId:Number(ticketTypeId),
         status,
       },
     });
@@ -106,6 +106,77 @@ const getBookingsByUserId = async (userId: number): Promise<Booking[]> => {
 };
 
 export {  getBookingsByUserId };
+
+
+/**
+ * Function to update booking status
+ * @param bookingId 
+ * @param status 
+ * @returns 
+ */
+const updateBookingStatus = async (bookingId: number, status: 'CONFIRMED' | 'CANCELLED'): Promise<Booking> => {
+  try {
+    return await prisma.booking.update({
+      where: { id: bookingId },
+      data: { status, updatedAt: new Date() },
+    });
+  } catch (error: any) {
+    throw new Error(`Error updating booking status: ${error.message}`);
+  }
+};
+
+export { updateBookingStatus };
+
+
+
+/**
+ * Function to update booking status for a specific user's specific booking
+ * @param userId 
+ * @param bookingId 
+ * @param status 
+ * @returns 
+ */
+const updateUserBookingStatus = async (userId: number, bookingId: number, status: 'CONFIRMED' | 'CANCELLED'): Promise<Booking> => {
+  try {
+    const booking = await prisma.booking.findFirst({
+      where: { id: bookingId, userId },
+    });
+    if (!booking) {
+      throw new Error('Booking not found');
+    }
+    return await prisma.booking.update({
+      where: { id: bookingId },
+      data: { status, updatedAt: new Date() },
+    });
+  } catch (error: any) {
+    throw new Error(`Error updating booking status: ${error.message}`);
+  }
+};
+
+export { updateUserBookingStatus };
+
+
+
+/**
+ * Function to update booking status for a specific user
+ * @param userId 
+ * @param status 
+ * @returns 
+ */
+const updateAllUserBookingStatus = async (userId: number, status: 'CONFIRMED' | 'CANCELLED'): Promise<void> => {
+  try {
+    await prisma.booking.updateMany({
+      where: { userId },
+      data: { status, updatedAt: new Date() },
+    });
+  } catch (error: any) {
+    throw new Error(`Error updating booking status: ${error.message}`);
+  }
+};
+
+export {  updateAllUserBookingStatus };
+
+
 
 
 /**

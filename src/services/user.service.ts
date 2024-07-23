@@ -47,7 +47,7 @@ const loginUser = async (email: string, password: string) => {
       process.env.JWT_SECRET as string,
       { expiresIn: "1h" }
     );
-    return { token, role: user.role };
+    return { token, role: user.role, id:user.id };
   }
   return null;
 };

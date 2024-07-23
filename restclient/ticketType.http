@@ -5,8 +5,9 @@ Authorization: Bearer
 
 
 
+
 ### get a specific ticketType
-GET http://localhost:3000/ticketTypes/
+GET http://localhost:3000/ticketTypes/1
 Content-Type: application/json
 Authorization: Bearer 
 
@@ -53,5 +54,11 @@ Authorization: Bearer
 
 ### delete a specific ticketType
 DELETE http://localhost:3000/ticketTypes/29
+Content-Type: application/json
+Authorization: Bearer 
+
+
+### get ticket types by event id
+GET http://localhost:3000/ticketTypes/event/1
 Content-Type: application/json
 Authorization: Bearer 

@@ -99,3 +99,22 @@ export {
   updateTicketType,
   deleteTicketType,
 };
+
+
+/**
+ * Function to get ticket types by event ID
+ * @param eventId
+ * @returns
+ */
+const getTicketTypesByEventId = async (eventId: number): Promise<TicketType[]> => {
+  try {
+    return await prisma.ticketType.findMany({
+      where: { eventId },
+    });
+  } catch (error: any) {
+    throw new Error(`Error retrieving ticket types: ${error.message}`);
+  }
+};
+// **Added code ends here**
+
+export {getTicketTypesByEventId };

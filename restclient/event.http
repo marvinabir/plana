@@ -1,38 +1,28 @@
 ### create an event
 POST http://localhost:3000/events
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTM5NjM4MCwiZXhwIjoxNzIxMzk5OTgwfQ.AOhlREf8tZBCoOiSVcfmf80YjEw3tBnmixUJwgyFnDM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTY1NjEwOCwiZXhwIjoxNzIxNjU5NzA4fQ.5V9_Nlcnz2Y3TySu9Nb9fOWLuBdRmdoYE8ig8oOLw_A
 
 
 {
-  "title": "Anime  Festival 2024",
+  "title": "Crunchyroll wards 2024",
   "description": "Join us for a weekend of anime and manga!",
   "date": "2024-09-20T00:00:00Z",
   "time": "2024-09-20T09:00:00Z",
   "location": "Central Park, Wano",
-  "image": "https://i.pinimg.com/474x/fb/49/64/fb49643e7e84f697c2a5494518bcc07f.jpg",
+  
   "price": 75.00,
   "managerId": 2,
   "ticketTypes": [
-    {
-      "type": "Single",
-      "price": 75.00,
-      "availability": 80
-    },
-    {
-      "type": "Group",
-      "price": 150.00,
-      "availability": 70
-    }
   ]
 }
 
 
 
 ### update an event
-PUT  http://localhost:3000/events/11
+PUT  http://localhost:3000/events/14
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTM2OTM4MCwiZXhwIjoxNzIxMzcyOTgwfQ.W3OnqrWpLzkWDJr8J98qWmIUICF0G5GCbZGCw0V3bO0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTYzNzgwOCwiZXhwIjoxNzIxNjQxNDA4fQ.w_iEGPAxqCpjF_K8pruew6BsBCEe8waWp-GqGHZeXRY
 
 
 {
@@ -72,9 +62,9 @@ Content-Type: application/json
 
 
 ### delete an event
-DELETE  http://localhost:3000/events/
+DELETE  http://localhost:3000/events/14
 Content-Type: application/json
-Authorization: Bearer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJtYXJ2b0BnbWFpbC5jb20iLCJyb2xlIjoiRVZFTlRfTUFOQUdFUiIsImlhdCI6MTcyMTYzNzgwOCwiZXhwIjoxNzIxNjQxNDA4fQ.w_iEGPAxqCpjF_K8pruew6BsBCEe8waWp-GqGHZeXRY
 
 
 ### get All events
